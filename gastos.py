@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Apr 21 21:10:47 2024
-
 @author: Usuario
 """
 import streamlit as st
 
 st.title('División de gastos 	:money_with_wings:')
-st.text('''Los precios se escriben como en EEUU con punto en vez de coma. 
-Ej: 25.20 (veinticinco pesos con veinte centavos)''')
+st.text('''Los precios se escriben como en EEUU
+con punto en vez de coma. 
+Ej: 20.10 (veinte pesos con diez centavos)''')
 
 
 
