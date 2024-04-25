@@ -21,21 +21,24 @@ with col1:
         with st.form(key= f'forma{key}'):       
             nombre = st.text_input('Nombre:', key= f'name{key}')
             precio = st.number_input('Precio: ', key= f'price{key}', step=0.10, value=None)
-            personas.update({nombre.capitalize():precio})       
+            personas.update({nombre.capitalize():precio})  
             st.form_submit_button('Listo')
         key += 1
 
+  #  while True:
+   #     opciones = st.selectbox('Nombre',personas.keys())
     if precio:  
         total = round(sum(personas.values()), 2)
         total_persona = round(total / x, 2)
 
-        st.subheader('Precios')  
+        st.subheader('Compras')  
         for n, p in personas.items():
             st.write(f':small_blue_diamond: **{n}:** $ {p}') 
         st.write(f':small_blue_diamond: Total: ${total}')
         st.write(f':small_blue_diamond: Total por persona: ${total_persona}')
         
 if precio:
+
     st.subheader('Paga la plata')
     for k, v in personas.items():
         diferencia = round(v - total_persona, 2)
@@ -43,8 +46,7 @@ if precio:
             if diferencia == 0:
                 st.write(f':grin: {k}: cuenta saldada')
             elif diferencia > 0:
-                st.write(f''':sunglasses: {k} no debe plata.
-                        Le deben: $ {diferencia}''')
+                st.write(f':sunglasses: {k} no debe plata. Le deben: $ {diferencia}')
             else:
                 st.write(f':disappointed: {k} debe: $ {abs(diferencia)}')    
     st.image('https://media1.tenor.com/m/5zm4Lv18Ov0AAAAC/pagaste-dami%C3%A1n-betular.gif', width=230)
