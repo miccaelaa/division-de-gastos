@@ -14,22 +14,29 @@ Ej: 3.10 (tres pesos con diez centavos)''')
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    x = int(st.number_input('**Cantidad de personas**', min_value=2, max_value=30, step=1))
+    cant_personas = int(st.number_input('**Cantidad de personas:**', min_value=2, max_value=30, step=1))
     personas = {}
     key = 1
-    for i in range(x):
+    prueba = 1
+    for i in range(cant_personas):
         with st.form(key= f'forma{key}'):       
-            nombre = st.text_input('Nombre:', key= f'name{key}')
-            precio = st.number_input('Precio: ', key= f'price{key}', step=0.10, value=None)
-            personas.update({nombre.capitalize():precio})  
+            nombre = st.text_input('**Nombre:**', key= f'name{key}')
+            precio = 0.0
+            cant_compras = int(st.number_input('**Cantidad de compras:**', key=f'pru{key}', min_value=1, max_value=30, step=1))
+            for j in range(cant_compras):
+                p = st.number_input('**Precio:** ', key= f'price{prueba}', step=0.10, value=None)
+                prueba += 1
+                precio += p
+             
             st.form_submit_button('Listo')
+            personas.update({nombre.capitalize():precio}) 
         key += 1
 
   #  while True:
    #     opciones = st.selectbox('Nombre',personas.keys())
     if precio:  
         total = round(sum(personas.values()), 2)
-        total_persona = round(total / x, 2)
+        total_persona = round(total / cant_personas, 2)
 
         st.subheader('Compras')  
         for n, p in personas.items():
