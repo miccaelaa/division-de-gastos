@@ -24,7 +24,7 @@ with col1:
             precio = 0.0
             cant_compras = int(st.number_input('**Cantidad de compras:**', key=f'pru{key}', min_value=1, max_value=30, step=1))
             for j in range(cant_compras):
-                p = st.number_input('**Precio:** ', key= f'price{prueba}', step=0.10, value=None)
+                p = st.number_input('**Precio:** ', key= f'price{prueba}', step=0.10)
                 prueba += 1
                 precio += p
              
