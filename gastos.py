@@ -11,7 +11,7 @@ Ej: 3.10 (tres pesos con diez centavos)''')
 
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
     cant_personas = int(st.number_input('**Cantidad de personas:**', min_value=2, max_value=30, step=1))
@@ -41,20 +41,18 @@ with col1:
             st.write(f':large_purple_circle: **{n}:** $ {p}') 
         st.write(f':black_circle: Total: ${total}')
         st.write(f':black_circle: Total por persona: ${total_persona}')
-        
-if precio:
-
-    st.subheader('Paga la plata', divider='grey')
-    for k, v in personas.items():
-        diferencia = round(v - total_persona, 2)
-        if len(personas) > 1:
-            if diferencia == 0:
-                st.write(f':grin: {k}: cuenta saldada')
-            elif diferencia > 0:
-                st.write(f':sunglasses: {k} no debe plata. Le deben: $ {diferencia}')
-            else:
-                st.write(f':disappointed: {k} debe: $ {abs(diferencia)}')    
-    st.image('https://media1.tenor.com/m/5zm4Lv18Ov0AAAAC/pagaste-dami%C3%A1n-betular.gif', width=230)
+  
+        st.subheader('Paga la plata', divider='grey')
+        for k, v in personas.items():
+            diferencia = round(v - total_persona, 2)
+            if len(personas) > 1:
+                if diferencia == 0:
+                    st.write(f':grin: {k}: cuenta saldada')
+                elif diferencia > 0:
+                    st.write(f':sunglasses: {k} no debe plata. Le deben: $ {diferencia}')
+                else:
+                    st.write(f':disappointed: {k} debe: $ {abs(diferencia)}')    
+        st.image('https://media1.tenor.com/m/5zm4Lv18Ov0AAAAC/pagaste-dami%C3%A1n-betular.gif', width=230)
 
 
 
