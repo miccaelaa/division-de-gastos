@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Usuario
+
 """
 import streamlit as st
 
@@ -32,21 +32,19 @@ with col1:
             personas.update({nombre.capitalize():precio}) 
         key += 1
 
-  #  while True:
-   #     opciones = st.selectbox('Nombre',personas.keys())
     if precio:  
         total = round(sum(personas.values()), 2)
         total_persona = round(total / cant_personas, 2)
 
-        st.subheader('Compras')  
+        st.subheader('Compras', divider='grey')  
         for n, p in personas.items():
-            st.write(f':small_blue_diamond: **{n}:** $ {p}') 
-        st.write(f':small_blue_diamond: Total: ${total}')
-        st.write(f':small_blue_diamond: Total por persona: ${total_persona}')
+            st.write(f':large_purple_circle: **{n}:** $ {p}') 
+        st.write(f':black_circle: Total: ${total}')
+        st.write(f':black_circle: Total por persona: ${total_persona}')
         
 if precio:
 
-    st.subheader('Paga la plata')
+    st.subheader('Paga la plata', divider='grey')
     for k, v in personas.items():
         diferencia = round(v - total_persona, 2)
         if len(personas) > 1:
