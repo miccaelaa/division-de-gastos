@@ -36,9 +36,9 @@ with col1:
         total = round(sum(personas.values()), 2)
         total_persona = round(total / cant_personas, 2)
 
-        st.subheader('Compras', divider='grey')  
+        st.subheader('Totales', divider='grey')  
         for n, p in personas.items():
-            st.write(f':large_purple_circle: **{n}:** $ {p}') 
+            st.write(f':large_purple_circle: **{n}**: $ {p}') 
         st.write(f':black_circle: Total: ${total}')
         st.write(f':black_circle: Total por persona: ${total_persona}')
   
@@ -47,11 +47,11 @@ with col1:
             diferencia = round(v - total_persona, 2)
             if len(personas) > 1:
                 if diferencia == 0:
-                    st.write(f':grin: {k}: cuenta saldada')
+                    st.write(f':grin: **{k}**: cuenta saldada')
                 elif diferencia > 0:
-                    st.write(f':sunglasses: {k} no debe plata. Le deben: $ {diferencia}')
+                    st.write(f':sunglasses: **{k}** no debe plata. Le deben: $ {diferencia}')
                 else:
-                    st.write(f':disappointed: {k} debe: $ {abs(diferencia)}')    
+                    st.write(f':disappointed: **{k}** debe: $ {abs(diferencia)}')    
         st.image('https://media1.tenor.com/m/5zm4Lv18Ov0AAAAC/pagaste-dami%C3%A1n-betular.gif', width=230)
 
 
