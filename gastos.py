@@ -38,7 +38,7 @@ with col1:
 
         st.subheader('Totales', divider='grey')  
         for n, p in personas.items():
-            st.write(f':large_purple_circle: **{n}**: $ {p}') 
+            st.write(f':girl: **{n}**: $ {p}') 
         st.write(f':black_circle: Total: ${total}')
         st.write(f':black_circle: Total por persona: ${total_persona}')
   
